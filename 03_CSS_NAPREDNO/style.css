@@ -1,0 +1,58 @@
+.crveni_paragraf {
+    color: red;
+}
+
+.desno_poravnanje {
+    text-align: right;
+}
+
+/* Više elemenata sa istim svojstvom */
+h3, h4 {
+    color: orange;
+}
+
+.drugi, #treci {
+    background-color: yellow;
+}
+
+/* Prioritet: seltor < klasa < id */
+li {
+    color: green;
+}
+
+.kurs {
+    color: blue;
+}
+
+#js {
+    color: red;
+}
+
+/* Selektovati sve paragrafe unutar div elementa */
+div p {
+    text-decoration: underline;
+}
+
+div .podparagraf {
+    font-weight: bold;
+}
+
+/* Selektuje SAMO DIREKTNE POROPKE - "samo prvo koleno"*/
+#divizija>p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Traći u svakoj ol je 3 */
+ol li:nth-child(3){
+    color: red;
+}
+
+/* Svaki traći je 3n */
+ol li:nth-child(3n){
+    font-style: italic;
+}
+
+/* odd - svi neparni, even - svi parni */
+ol li:nth-child(odd){
+    background-color: greenyellow;
+}
