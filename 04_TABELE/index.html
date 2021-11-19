@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabele</title>
+    <style> 
+        #tabela {
+            border: 1px red solid;
+        }
+        #tabela td {
+            border: 1px blue solid;
+        }
+    </style>
+</head>
+<body>
+    <table id="tabela">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+    <!-- Spajanje kolona u tabeli -->
+
+    <table border="1" cellspacing="0">
+        <tr>
+            <td colspan="3">1</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+    <!-- Spajanje redova -->
+    <table border="1" cellspacing="0">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td rowspan="3">3</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+
+        <tr>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+    </table>
+</body>
+</html>
