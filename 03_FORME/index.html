@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forme</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Osnovni podaci</legend>
+            <p>
+                <label>Ime:</label>
+                <input type="text" maxlength="15" value="Ana">
+            </p>
+            
+            <p>
+                <label>Prezime:</label>
+                <input type="text" placeholder="Unesite prezime">
+            </p>
+
+            <p>
+                <label>Godine:</label>
+                <input type="number" min="18" step="1">
+            </p>
+
+            <p>
+                <label>e-mail:</label>
+                <input type="email" name="" id="">
+            </p>
+
+            <p>
+                <label>Lozinka:</label>
+                <input type="password" name="" id="">
+            </p>
+            
+        </fieldset>
+
+        <fieldset>
+            <legend>Ostali podaci</legend>
+
+            <p>
+                <label>Odaberite pol:</label>
+                <input type="radio" name="pol" id="" value="z">Ženski
+                <input type="radio" name="pol" id="" value="m">Muški
+                <input type="radio" name="pol" id="" value="d" checked>Drugo
+            </p>
+
+            <p>
+                <label>Odaberite kurs:</label>
+                <input type="radio" name="kurs" id="" value="js">JS
+                <input type="radio" name="kurs" id="" value="php">PHP
+                <input type="radio" name="kurs" id="" value="qa">QA
+            </p>
+
+            <p>
+                <label>Odaberite programske jezike koje želite da naučite:</label>
+                <br>
+                <input type="checkbox" name="jezik" id="" value="js">JS
+                <input type="checkbox" name="jezik" id="" value="php">PHP
+                <input type="checkbox" name="jezik" id="" value="c++">C++
+                <input type="checkbox" name="jezik" id="" value="java">Java
+                <input type="checkbox" name="jezik" id="" value="python">Python
+            </p>
+
+            <p>
+                <label>Obrazovanje:</label>
+                <select name="obrazovanje" id="">
+                    <option value="os">Osnovna škola</option>
+                    <option value="ss">Srednja škola</option>
+                    <optgroup label="Fakultet">
+                        <option value="oas">OAS</option>
+                        <option value="mas">MAS</option>
+                        <option value="das">DAS</option>
+                    </optgroup>
+                </select>
+            </p>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="Pošalji">
+            <input type="reset" value="Resetuj">
+            <button>KLIKNI</button>
+        </p>
+        
+    </form>
+</body>
+</html>
