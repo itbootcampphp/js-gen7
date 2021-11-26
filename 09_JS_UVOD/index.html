@@ -30,6 +30,33 @@
         console.log('It\'s alright');
         console.log(true);
         console.log(false);
+
+        let x; // deklaracija promenljive
+        console.log(x); // undefined
+        x = 3; // dodela vrednosti
+        console.log(x);
+        x = "Stefan";
+        console.log(x);
+
+        let y = false;
+        console.log(y);
+        y = x;
+        console.log(x, y); // x="Stefan", y="Stefan"
+        x = "Jelena";
+        console.log(x, y); // x="Jelena", y="Stefan"
+
+        const z = 0;
+        console.log(z);
+        y = 6 + z;
+        console.log(y); // y = 6
+        
+        let age;
+        console.log(age, age + 3); // undefined, NaN (Not a Number)
+
+        let age2 = null; 
+        console.log(age2, age2 + 3, age2 + "Pera"); // NULL, 3
     </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
