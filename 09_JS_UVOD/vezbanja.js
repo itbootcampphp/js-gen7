@@ -61,3 +61,13 @@ console.log("Imamo " + k2 + " dolara nakon razmene");
 let novacDolari = 200;
 let k3 = novacDolari * kursDolari / kursEvri;
 console.log("Imamo " + k3 + " evra nakon razmene");
+
+// Trenutno vreme i datum
+let datum = new Date(); // datum - objekat koji sadrzi inf. o trenutnom datumu i vremenu
+
+let godina = datum.getFullYear();
+let mesec = datum.getMonth() + 1;
+let datumUMesecu = datum.getDate(); // datum u mesecu
+let danUNedelji = datum.getDay(); // dan u nedelji
+console.log("Danas je " + datumUMesecu + "." + mesec + "." + godina);
+console.log(danUNedelji);
