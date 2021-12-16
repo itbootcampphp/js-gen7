@@ -470,6 +470,19 @@ let ukupno = a*n + d*(n-1); // plate + povišice
 let ukupno1 = n*(a+d) - d; // plate sa povišicama - 1. mesec kada nemam povišicu
 let ukupno2 = a + (n-1)*(a+d); // plata za 1. mesec + plata za preostalih n-1 meseci
 
+// 16.
+// Milica i Kristina
+function vreme(t, p, n) {
+  let čekaj = n + p - t;
+  if (p > t || t >= p + n) {
+      console.log(`Burke samo piči`);
+  }
+  else {
+      console.log(`Burke treba da krene kroz ${čekaj} sec da ne bi čekao most`);
+  }
+}
+vreme(11, 10, 160);
+
 
 
 
