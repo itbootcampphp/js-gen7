@@ -153,3 +153,105 @@ let minVrednost = niz => {
     }
     return min;
 }
+
+// 16. Dat je niz stavki za kupovinu (članovi niza su stringovi). Prolaskom kroz niz napraviti neuređenu listu i ispisati je u html dokument.
+
+let lista = ["hleb", "mleko", "sir", "secer", "brasno"];
+
+let ispisLista = niz => {
+    let rezultat = "<ul>";
+    for(let i = 0; i < niz.length; i++) {
+        rezultat += `<li>${niz[i]}</li>`;
+    }
+    rezultat += "</ul>";
+    return rezultat;
+}
+
+//document.body.innerHTML += ispisLista(lista);
+document.getElementById('d1').innerHTML += ispisLista(lista);
+
+// 19. Ispisati dužinu svakog elementa u nizu stringova. 
+
+let duzinaEl = niz => {
+    for(let i = 0; i < niz.length; i++) {
+        console.log(niz[i].length);
+    }
+}
+
+let imena = ["Stefan", "Aleksandar", "Kristian", "Bogdan", "Pavle", "Nikola"];
+duzinaEl(imena);
+
+// 20. Odrediti element u nizu stringova sa najvećom dužinom.
+
+let stringMaxDuzine = niz => {
+    let maxDuzina = niz[0].length; // pp. da je prvi element niza najduzi
+    let maxString = niz[0];
+    for(let i = 1; i < niz.length; i++) {
+        if(niz[i].length > maxDuzina) {
+            maxDuzina = niz[i].length;
+            maxString = niz[i];
+        }
+    }
+    return maxString;
+}
+
+console.log(stringMaxDuzine(imena));
+
+// 21. Odrediti broj elemenata u nizu stringova čija je dužina veća od prosečne dužine svih stringova u nizu.
+
+let prosDuzina = niz => {
+    let suma = 0;
+    let broj = 0;
+    for(let i = 0; i < niz.length; i++) {
+        suma = suma + niz[i].length;
+        broj++;
+    }
+    return broj != 0 ? suma / broj : 0;
+}
+
+let brojVeciProsDuz = niz => {
+    let broj = 0;
+    let pd = prosDuzina(niz);
+    for(let i = 0; i < niz.length; i++) {
+        if(niz[i].length > pd) {
+            broj++;
+        }
+    }
+    return broj;
+}
+
+console.log(prosDuzina(imena));
+console.log(brojVeciProsDuz(imena));
+
+// 22. Odrediti broj elemenata u nizu stringova koji sadrže slovo 'a’. 
+
+let brojSadrziA = niz => {
+    let broj = 0;
+    for(let i = 0; i < niz.length; i++) {
+        if(niz[i].includes("a")) {
+            broj++;
+        }
+    }
+    return broj;
+}
+
+console.log(brojSadrziA(imena));
+
+// 22'. Odrediti broj pojavljivanja slova 'a' u nizu stringova.
+
+let brojKarakreraA = niz => {
+    let broj = 0;
+    for(let i = 0; i < niz.length; i++) {
+        // niz[i] je string
+        let element = niz[i];
+        // Sada prolazimo kroz sve karaktere stringa element
+        for(let j = 0; j < element.length; j++) {
+            if(element[j] == "a") {
+                broj++;
+            }
+        }
+    }
+    return broj;
+}
+
+console.log(brojKarakreraA(imena));
