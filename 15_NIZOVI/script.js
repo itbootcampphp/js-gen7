@@ -255,3 +255,40 @@ let brojKarakreraA = niz => {
 }
 
 console.log(brojKarakreraA(imena));
+
+// Zadatak 24
+
+let a = [1, 4, 7, -5];
+let b = [6, 6, 0, 9];
+
+let zad24 = (a, b) => {
+    let c = [];
+    for(let i = 0; i < a.length; i++)
+    {
+        c[2 * i] = a[i]; // c[0] = a[0], c[2] = a[1], c[4] = a[2], c[6] = a[3]
+        c[2 * i + 1] = b[i]; // c[1] = b[0], c[3] = b[1], c[5] = b[2], c[7] = b[3]
+    }
+    return c;
+}
+
+let zad24DN = (a, b) => {
+    let c = [];
+    let m = Math.min(a.length, b.length);
+    for(let i = 0; i < m; i++)
+    {
+        c.push(a[i]); 
+        c.push(b[i]); 
+    }
+    for(let i = m; i < a.length; i++)
+    {
+        c.push(a[i]);
+    }
+    for(let i = m; i < b.length; i++)
+    {
+        c.push(b[i]);
+    }
+    return c;
+}
+
+let res = zad24(a, b);
+console.log(res);
