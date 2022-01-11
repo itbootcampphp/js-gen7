@@ -5,4 +5,4 @@ function generateImage(src) {
     return img;
 }
 
-export {generateImage};
+export default generateImage;
