@@ -52,4 +52,14 @@ export class Film {
     stampaj() {
         console.log(this);
     }
+
+    prosek() {
+        let z = 0;
+        let c = 0;
+        this._ocene.forEach((e) => {
+          z += e;
+          c++;
+        });
+        return z / c;
+    }
 }
