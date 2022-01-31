@@ -22,6 +22,24 @@ class Chatroom{
     get room(){
         return this._room;
     }
+
+    // Dodavanje nove poruke
+    async addChat(mess){
+        // Dohvatanje trenutnog vremena, koji nam je potreban za timestamp (cteated_at polje u dokumentu)
+        let date = new Date(); 
+
+        // Kreiranje dokumenta/objekta prosleđujem bazi podataka
+        let docChat = {
+            message: mess,
+            username: this.username,
+            room: this.room,
+            created_at: firebase.firestore.Timestamp.fromDate(date) 
+        };
+
+        // Da sačuvan dokument u db
+        let response = await this.chats.add(docChat);
+        return response; // Vraćam Promise i mogu za njega da kažem .then i .catch            
+    }   
 }
 
 let chatroom1 = new Chatroom("js", "Stefan");
@@ -30,3 +48,10 @@ chatroom1.username = "Dušan"; // Testiram seter za username
 console.log(chatroom1.username);
 chatroom1.room = "general"; // Testiram seter za room
 console.log(chatroom1.room);
+
+let chatroom2 = new Chatroom("general", "Milena");
+chatroom2.addChat("Trening pisanja CV-ja")
+    .then( () => console.log("Uspešno dodat čet"))
+    .catch( err => console.log(err));
+
+
