@@ -1,0 +1,38 @@
+body{
+    text-align: center;
+    color: purple;
+}
+
+.btn{
+    width: 200px;
+    height: 40px;
+    font-size: 18px;
+    background-color: purple;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+
+.btn:hover{
+    background-color: rebeccapurple;
+    cursor: pointer;
+}
+
+form{
+    margin: 15px;
+}
+
+input{
+    width: 400px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+input:focus{
+    border: 3px purple solid;
+}
+
+input:focus, .btn:focus{
+    outline-width: 0;
+}
