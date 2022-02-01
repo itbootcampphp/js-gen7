@@ -13,9 +13,15 @@ let chatroom2 = new Chatroom("general", "Milena");
 //     .then( () => console.log("Uspešno dodat čet"))
 //     .catch( err => console.log(err));
 
+// Ispis dokumeneata iz db u konzoli
 chatroom2.getChats(d => {
     console.log(d);
 });
 
 let ulChatList = document.querySelector('ul');
 let chatUI1 = new ChatUI(ulChatList);
+
+// Ispis dokumenata iz db na stranici
+chatroom2.getChats(d => {
+    chatUI1.templateLI(d);
+});
