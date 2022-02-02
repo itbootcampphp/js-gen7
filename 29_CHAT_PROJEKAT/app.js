@@ -25,3 +25,16 @@ let chatUI1 = new ChatUI(ulChatList);
 chatroom2.getChats(d => {
     chatUI1.templateLI(d);
 });
+
+// DOM
+let formMessage = document.querySelector('#formMessage');
+let inputMessage = document.querySelector('#inputMessage');
+
+//Kada je submit dugme Send pošalji poruku
+formMessage.addEventListener('submit' , e => {
+    e.preventDefault();
+    let message = inputMessage.value;
+    chatroom1.addChat(message)
+        .then( () => formMessage.reset())
+        .catch( error => console.log(error));
+});
