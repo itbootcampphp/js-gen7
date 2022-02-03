@@ -29,12 +29,22 @@ chatroom2.getChats(d => {
 // DOM
 let formMessage = document.querySelector('#formMessage');
 let inputMessage = document.querySelector('#inputMessage');
+let formUsername = document.querySelector('#formUsername');
+let inputUsername = document.querySelector('#inputUsername');
 
 //Kada je submit dugme Send pošalji poruku
 formMessage.addEventListener('submit' , e => {
     e.preventDefault();
     let message = inputMessage.value;
-    chatroom1.addChat(message)
+    chatroom2.addChat(message)
         .then( () => formMessage.reset())
         .catch( error => console.log(error));
+});
+
+// Kada je submit dugme Update izmeni korisničko ime
+formUsername.addEventListener('submit', e => {
+    e.preventDefault();
+    let newUsername = inputUsername.value;
+    chatroom2.username = newUsername;
+    formUsername.reset();
 });
