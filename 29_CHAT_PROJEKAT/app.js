@@ -7,33 +7,15 @@ let formMessage = document.querySelector('#formMessage');
 let inputMessage = document.querySelector('#inputMessage');
 let formUsername = document.querySelector('#formUsername');
 let inputUsername = document.querySelector('#inputUsername');
+let navRooms = document.querySelector('nav');
 
 // Objekti klasa / Instance klasa
-let chatroom = new Chatroom("js", "Stefan");
+let username = "anonymus";
+if(localStorage.username) {
+    username = localStorage.username;
+}
+let chatroom = new Chatroom("js", username);
 let chatUI = new ChatUI(ulChatList);
-
-// Postavljanje vrednosti u Local Storage
-localStorage.setItem("nazivPromenljive", 5);
-localStorage.setItem("nazivPromenljive", 6);
-localStorage.setItem("nazivPromenljive", "Test string");
-localStorage.setItem("x", 7);
-localStorage.setItem("y", 10);
-
-// Uzimenje vrednosti iz Local Storage
-let z = localStorage.x + localStorage.y;
-console.log(z);
-console.log(localStorage.x);
-if(localStorage.x) {
-    console.log("X postoji");
-}
-else {
-    console.log("X ne postoji");
-}
-
-// Ispis dokumeneata iz db u konzoli
-chatroom.getChats(d => {
-    console.log(d);
-});
 
 // Ispis dokumenata iz db na stranici
 chatroom.getChats(d => {
@@ -54,5 +36,20 @@ formUsername.addEventListener('submit', e => {
     e.preventDefault();
     let newUsername = inputUsername.value;
     chatroom.username = newUsername;
+    localStorage.setItem("username", newUsername);
     formUsername.reset();
+});
+
+// Dugmad za promenu soba
+navRooms.addEventListener('click', e => {
+    if (e.target.tagName == "BUTTON") {
+        //1. Izbrisati sve poruke sa ekrana
+        chatUI.clear();
+        //2. Pozvati promenu sobe
+        chatroom.updateRoom(e.target.id);
+        //3. Prikazati četove
+        chatroom.getChats(data => {
+            chatUI.templateLI(data);
+        });
+    }
 });
